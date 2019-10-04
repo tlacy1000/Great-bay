@@ -1,7 +1,8 @@
 var inquirer = require("inquirer");
 var newAuction;
 var newBid;
-var output = {newAuction, newBid};
+var exit;
+var output = {newAuction, newBid, exit};
 
 inquirer.prompt([
     {
@@ -47,7 +48,8 @@ inquirer.prompt([
             newBid = [outputBid.itemToBidOn, outputBid.userBid]
         });
     } else if (userToDO.postBid === "EXIT") {
-        connection.end();
+        exit = true;
+        console.log("Thanks for playing!")
     }
 });
 
